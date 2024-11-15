@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    background-color: #0008e4;
+    color: #333; /* Warna teks umum */
+    line-height: 1.6; /* Kerapatan teks */
+}
+
+/* Kontainer Utama CV */
+.cv-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    background-color: #de460e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Bayangan lebih lembut */
+    border-radius: 10px; /* Tambahkan sudut melengkung */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out; /* Animasi ketika dihover */
+}
+
+.cv-container:hover {
+    transform: scale(1.02); /* Sedikit pembesaran saat hover */
+}
+
+/* Bagian Kiri CV */
+.left-section {
+    background-color: #b7fe04; /* Warna lebih lembut */
+    width: 30%;
+    padding: 30px 20px; /* Jarak lebih nyaman */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.profile-pic img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 5px solid #0c65ff; /* Berikan border di sekitar gambar profil */
+    margin-bottom: 20px;
+}
+
+.contact-info, .skills {
+    margin-bottom: 40px;
+}
+
+.contact-info h2, .skills h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #555; /* Warna judul lebih lembut */
+    margin-bottom: 15px;
+}
+
+.contact-info p, .skills ul {
+    font-size: 16px;
+    color: #666; /* Warna teks lebih lembut */
+    margin-bottom: 10px;
+}
+
+.skills ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.skills ul li {
+    margin-bottom: 10px;
+    background-color: #e0e0e0; /* Latar belakang untuk setiap skill */
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Bagian Kanan CV */
+.right-section {
+    background-color: #fff;
+    width: 70%;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-section h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.right-section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0073e6; /* Warna teks yang lebih cerah */
+    margin-bottom: 15px;
+}
+
+.right-section p {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.education h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Teks di dalam section lebih rapi */
+.right-section h2, .education h3 {
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+/* Pastikan agar tampilan ketika dicetak juga berbentuk A4 */
+@media print {
+    body {
+        width: 210mm;
+        height: 297mm;
+    }
+    .cv-container {
+        box-shadow: none; /* Hilangkan bayangan saat mencetak */
+        margin: 0;
+        padding: 0;
+    }
+    .left-section, .right-section {
+        padding: 0;
+    }
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+    }
+
+    .left-section {
+        padding: 20px;
+    }
+
+    .right-section {
+        padding: 20px;
+    }
+}
